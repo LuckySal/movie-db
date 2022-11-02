@@ -1,10 +1,9 @@
 require('dotenv').config();
-console.log(process.env);
 
 const express = require("express");
 const sql = require("mysql2");
 
-var connection = mysql.createConnection({
+var connection = sql.createConnection({
     host     : 'localhost',
     user     : 'root',
     password : process.env.PASSWORD,
@@ -17,4 +16,4 @@ const app = express();
 
 app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}`)
-})
+});
