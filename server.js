@@ -14,6 +14,26 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
+app.get("/api/movies", (request, response) => {
+    response("A list of movies");
+    console.log(`${request.method} request recieved with ${request.body}`);
+});
+
+app.post("/api/add-movie", (request, response) => {
+    response("Movie added");
+    console.log(`${request.method} request recieved with ${request.body}`);
+});
+
+app.put("/api/update-review", (request, response) => {
+    response("Updated review");
+    console.log(`${request.method} request recieved with ${request.body}`);
+});
+
+app.delete("/api/movie/:id", (request, response) => {
+    response("Movie deleted");
+    console.log(`${request.method} request recieved with ${request.body}`);
+});
+
 app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}`)
 });
